@@ -1,0 +1,231 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+/*
+  VARIABLES
+*/
+:root{
+  --banner-c :#3A99D8;
+  --white:#fff;
+  --banner-bg:#2D3E4F;
+  --body-text:#2c2c2c;
+  --highlight:#9AC75B;
+  --base:27px;
+  --font:1rem;
+  --container:1272px;
+  --light-gray:#ebebeb;
+  --light-blue:#439CCF;
+  --medium-gray:#a8a8a8;
+  --cta-bg:#292C2E;
+}
+input, button{
+  outline:none;
+}
+/*
+  TYPOGRAPHY
+*/
+body{
+  font:var(--font)/var(--base) 'Open Sans', sans-serif;
+  color:var(--body-text);
+}
+.banner_title{
+  font-size:calc(var(--base) * 2);
+  line-height:calc(var(--base) * 2);
+  letter-spacing:2.5px;
+  color: var(--banner-c);
+  text-transform: uppercase;
+}
+.section_title {
+  font-weight: 300;
+  font-size:calc(var(--font) * 2);
+  text-align: center;
+}
+.section_desc{
+  font-weight: 300;
+  font-size: calc(var(--font) * 1.125);
+  text-align: center;
+}
+.highlight{
+  color:var(--highlight); 
+}
+a.highlight{
+  color:var(--highlight);
+  text-decoration: underline;  
+}
+.btn.highlight_bg{
+  background: var(--highlight);
+  color: #55762C;
+}
+/* LINK */
+.btn{
+  background: var(--light-gray);
+  border-radius:3px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-size: calc(var(--font) * 0.875);
+  height: 39px;
+  color: #6E6E6E;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap:10px;
+}
+.btn.big{
+  padding: 0 30px;
+  height: calc(var(--base) * 2);
+}
+/*
+  LAYOUT
+*/
+.container{
+  width: var(--container);
+  margin:0 auto;
+}
+.sec_pd{
+  padding: calc(var(--base) * 3) 0;
+}
+.d_flex{
+  display: flex;
+}
+.aic{
+  align-items: center;
+}
+.jcc{
+  justify-content: center;
+}
+.jcsb{
+  justify-content: space-between;
+}
+.hidden{
+  position: absolute;
+  top: 0;
+  left:-9999em;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+hr{
+  border:none;
+  /* border-top:1px solid var(--medium-gray); */
+  height: 1px;
+  background: var(--medium-gray);
+}
+
+
+/* header */
+header{
+  padding: var(--base) 0;
+  background: #fff;
+  box-shadow: 0 2px 3px rgba(0,0,0,.1);
+}
+header nav{
+  gap:50px;
+}
+header nav ul{
+  gap:10px;
+}
+/* .logo a{
+  width: 161px;
+  height: 54px;
+  background: url(../images/logo.png) no-repeat;
+  text-indent: -9999em;
+  display: block;
+} */
+.logo a span:last-child{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path:rect(0 0 0 0);
+}
+.main_menu{
+  font-size: calc(var(--font) * 0.875);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* 
+Slideshow
+*/
+.slidewrapper{
+  overflow: hidden;
+  position: relative;
+}
+.slidecontainer{  
+  display: flex;
+  transition:transform 0.4s;
+}
+.slidecontainer > li{
+  width: var(--container);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:var(--base);
+}
+.slidewrapper button{
+  position: absolute;
+  top: 50%;
+  transform:translateY(-50%);  
+  color: var(--light-gray);
+  background: none;
+  border:none;
+  padding: 0;
+  cursor: pointer;
+}
+.slidewrapper button span{
+  font-size: 36px;
+  vertical-align: top;
+}
+.slidewrapper .prev{
+  left: 0;
+}
+.slidewrapper .next{
+  right: 0;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  background: var(--cta-bg);
+}
+.cta .section_title{
+  margin-bottom: var(--base);
+  color: var(--white);
+}
+.cta .section_desc{
+  margin-bottom: calc(var(--base) * 2);
+  color: var(--medium-gray);
+}
+/* Copyright */
+.copyright{
+  text-align: center;
+}
+.copyright p + p{
+  margin-top: var(--base);  
+}
+#btt {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 2em;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  box-shadow:0 0 5px rgba(255,255,255,.6);
+  opacity: 0;
+  visibility: hidden;
+  transition:0.5s;
+}
+#btt.active{
+  opacity: 1;
+  visibility: visible;
+}
+/* BANNER */
+.banner{
+  background: var(--banner-bg);
+  text-align: center;
+}
